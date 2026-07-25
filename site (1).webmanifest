@@ -1,0 +1,11 @@
+{
+  "name": "Liam Cornish",
+  "short_name": "Liam Cornish",
+  "icons": [
+    { "src": "android-chrome-192x192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "android-chrome-512x512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#0C1A22",
+  "background_color": "#0C1A22",
+  "display": "standalone"
+}
