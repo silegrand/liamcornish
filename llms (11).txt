@@ -1,0 +1,26 @@
+# Liam Cornish
+
+> Head of Technical Operations and Lead Product Designer, and a fully qualified electrical engineer with more than 25 years designing, building and commissioning renewable, off-grid and autonomous power systems for the world's harshest, highest-hazard environments. Designer of the internationally renowned Sunstone SICS, RAFT and ARC power platforms.
+
+Liam is based in Whitstable, Kent, UK, and is open to senior or managerial engineering roles, UK-based or international, including hybrid working. Safety and efficiency underpin all of his design work, with a focus on operation and maintenance and on optimising multiple technologies into truly hybrid systems. Contact: 07845 619290, liamcornish79@gmail.com. Headline accreditations: MIET (Member of the IET), NEBOSH, City & Guilds 2391-52, 18th Edition BS 7671, NICEIC Solar PV Design & Installation, and CITB SMSTS.
+
+## Portfolio
+- [Homepage](https://www.liamcornish.xyz/): Full portfolio and CV covering profile, projects, skills, experience and accreditations.
+- [Profile](https://www.liamcornish.xyz/#profile): Specialist product designer setting the standard for remote autonomous power platforms.
+- [Selected projects](https://www.liamcornish.xyz/#work): Flagship contracts with contract values, technical specs and outcomes.
+- [Skills](https://www.liamcornish.xyz/#skills): Design & delivery, power & hybrid systems, leadership & compliance.
+- [Experience](https://www.liamcornish.xyz/#experience): Twenty-five year career history.
+- [Accreditations](https://www.liamcornish.xyz/#accreditations): Qualifications and certifications.
+- [Contact](https://www.liamcornish.xyz/#contact): Phone, email and CV download.
+
+## Key projects
+- Sunstone SICS (Tengizchevroil / Chevron, with Fluor): 58 solar off-grid security systems delivered on time and on budget, contract value over £2.5M, commissioned with on-site training in the Tengiz oil field, Kazakhstan.
+- Altnabreac Off-Grid Power Station (Telent / Network Rail / ScotRail): fully bespoke hybrid power station (9kW PV array, 12kW Bladon microturbine, 48kWh battery, Victron control), saving over £500k against a mains supply, with 100% uptime across more than two years off-grid.
+- RAFT platforms (Tengizchevroil / Chevron): a new generation of 33 off-grid power platforms, contract value over £1M, proven from -40°C to over 50°C.
+- ARC series (WJ Sunstone, originally a British MOD concept): the UK market-leading off-grid solar CCTV and communications platform, 400+ units deployed, with a recent HVO-optimised engine and Element Material Technologies certification.
+
+## Documents
+- [Curriculum Vitae (PDF)](https://www.liamcornish.xyz/Liam_Cornish_CV.pdf): Two-page CV, including a QR code linking back to this site.
+
+## Optional
+- [Marketing for my Mates](https://www.marketingformymates.com): Website design and build.

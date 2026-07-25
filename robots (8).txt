@@ -1,0 +1,8 @@
+# www.liamcornish.xyz
+# Liam Cornish — Head of Technical Operations & Lead Product Designer
+
+User-agent: *
+Allow: /
+
+# Structured summary for language models: /llms.txt
+Sitemap: https://www.liamcornish.xyz/sitemap.xml
