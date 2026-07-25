@@ -426,8 +426,11 @@
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:#809399;border-top:1px solid var(--line-dark);padding:34px 0}
   .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot-left{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
   .foot-inner .fname{font-family:"Archivo",sans-serif;font-weight:800;color:var(--paper);text-transform:uppercase;letter-spacing:.04em;font-size:.9rem}
   .foot-inner .meta{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.1em;color:var(--steel-2);text-transform:uppercase}
+  .foot-inner .built{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.1em;color:var(--steel-2);text-transform:uppercase;white-space:nowrap;transition:color .2s}
+  .foot-inner .built:hover{color:var(--amber)}
 
   /* ---------- responsive ---------- */
   @media (max-width:900px){
@@ -849,8 +852,11 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <span class="fname">Liam Cornish</span>
-    <span class="meta">Head of Technical Operations &amp; Lead Product Designer · Whitstable, Kent · © 2026</span>
+    <div class="foot-left">
+      <span class="fname">Liam Cornish</span>
+      <span class="meta">Head of Technical Operations &amp; Lead Product Designer · Whitstable, Kent · © 2026</span>
+    </div>
+    <a class="built" href="https://www.marketingformymates.com" target="_blank" rel="noopener">Built by Marketing for my Mates ↗</a>
   </div>
 </footer>
 
