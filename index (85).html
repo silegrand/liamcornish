@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liam Cornish · Electrical Engineer & Renewables Specialist</title>
+<meta name="description" content="Liam Cornish — electrical engineer and renewables specialist. 25+ years designing, building and commissioning off-grid power, solar and surveillance systems in remote and hazardous environments.">
+<meta name="theme-color" content="#0C1A22">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Liam Cornish · Electrical Engineer & Renewables Specialist">
+<meta property="og:description" content="25+ years designing, building and commissioning off-grid power, solar and surveillance systems in the world's most demanding environments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C1A22;
+    --ink-2:#122631;
+    --ink-3:#183441;
+    --paper:#F1F4F3;
+    --paper-2:#FFFFFF;
+    --slate:#16262E;
+    --steel:#5E727B;
+    --steel-2:#7D8F97;
+    --line-dark:#294450;
+    --line-light:#D3DBDB;
+    --amber:#EEA23A;
+    --amber-bright:#FFC978;
+    --amber-deep:#C9832A;
+    --ok:#5FBF9B;
+    --r:4px;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--slate);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--amber);color:var(--ink)}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+  /* ---------- shared type / structural devices ---------- */
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:500;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    color:var(--steel);
+  }
+  .eyebrow.on-dark{color:var(--steel-2)}
+  .eyebrow .node{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--amber);
+    box-shadow:0 0 0 4px rgba(238,162,58,.16);
+    flex:none;
+  }
+  .eyebrow .rule{width:34px;height:1px;background:var(--line-light)}
+  .eyebrow.on-dark .rule{background:var(--line-dark)}
+  .eyebrow .ref{color:var(--amber-deep)}
+  .eyebrow.on-dark .ref{color:var(--amber)}
+
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.02;letter-spacing:-.02em}
+  .section-title{
+    font-size:clamp(2rem,4.6vw,3.4rem);
+    font-weight:800;
+    margin:20px 0 0;
+    max-width:16ch;
+  }
+  .section-title.wide{max-width:24ch}
+  .lead{
+    font-size:clamp(1.02rem,1.5vw,1.18rem);
+    color:var(--steel);
+    max-width:60ch;
+    margin-top:20px;
+  }
+
+  section{padding:104px 0}
+  .band-ink{background:var(--ink);color:var(--paper)}
+  .band-ink .section-title{color:var(--paper)}
+  .band-ink .lead{color:#AFC0C4}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(12,26,34,.82);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(41,68,80,.6);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;padding:0 28px;
+    height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;color:var(--paper)}
+  .brand .mark{
+    width:34px;height:34px;flex:none;
+  }
+  .brand .name{
+    font-family:"Archivo",sans-serif;font-weight:800;
+    font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;line-height:1;
+  }
+  .brand .name span{display:block;font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:.6rem;letter-spacing:.24em;color:var(--amber);margin-top:4px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;
+    color:#A8B9BD;transition:color .2s;position:relative;padding:4px 0;
+  }
+  .nav-links a:hover,.nav-links a.active{color:var(--paper)}
+  .nav-links a.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--amber);
+  }
+  .nav-cta{
+    font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink);background:var(--amber);
+    padding:9px 16px;border-radius:var(--r);font-weight:500;
+    transition:transform .15s,background .2s;
+  }
+  .nav-cta:hover{background:var(--amber-bright);transform:translateY(-1px)}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex:none}
+  .burger span{display:block;width:24px;height:2px;background:var(--paper);margin:5px 0;transition:.25s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--ink);color:var(--paper);
+    padding:150px 0 0;position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(41,68,80,.28) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(41,68,80,.28) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 80% at 72% 8%,#000,transparent 72%);
+    mask-image:radial-gradient(ellipse 70% 80% at 72% 8%,#000,transparent 72%);
+    opacity:.5;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2}
+  .hero .title-line{overflow:hidden}
+  .hero h1{
+    font-weight:900;
+    font-size:clamp(3.1rem,10.5vw,8.2rem);
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+    line-height:.92;
+    margin:26px 0 0;
+  }
+  .hero h1 .amber{color:var(--amber)}
+  .hero .role{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:clamp(.82rem,1.6vw,1.02rem);
+    letter-spacing:.2em;text-transform:uppercase;
+    color:#AFC0C4;margin-top:26px;
+  }
+  .hero-pitch{
+    font-size:clamp(1.08rem,1.9vw,1.4rem);
+    max-width:56ch;margin-top:30px;color:#CDD9DB;line-height:1.5;
+  }
+  .hero-pitch b{color:var(--paper);font-weight:600}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .btn{
+    font-family:"IBM Plex Mono",monospace;font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
+    padding:14px 22px;border-radius:var(--r);font-weight:500;
+    display:inline-flex;align-items:center;gap:10px;transition:transform .15s,background .2s,border-color .2s;
+  }
+  .btn-primary{background:var(--amber);color:var(--ink)}
+  .btn-primary:hover{background:var(--amber-bright);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line-dark);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+  /* conductor line + pulse */
+  .conductor{
+    position:relative;height:2px;background:var(--line-dark);
+    margin:62px 0 0;
+  }
+  .conductor .live{
+    position:absolute;top:50%;left:0;width:100%;height:2px;transform:translateY(-50%);
+    background:linear-gradient(90deg,transparent,var(--amber),transparent);
+    background-size:220px 100%;background-repeat:no-repeat;
+    background-position:-220px 0;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .conductor .live{animation:current 4.2s linear infinite}
+  }
+  @keyframes current{
+    0%{background-position:-220px 0}
+    100%{background-position:calc(100% + 220px) 0}
+  }
+  .conductor .tap{
+    position:absolute;top:50%;transform:translate(-50%,-50%);
+    width:10px;height:10px;border-radius:50%;background:var(--ink);
+    border:2px solid var(--amber);
+  }
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line-dark);
+    margin-top:0;
+  }
+  .hero-stat{
+    padding:30px 26px 40px;border-right:1px solid var(--line-dark);
+  }
+  .hero-stat:last-child{border-right:0}
+  .hero-stat .num{
+    font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(1.9rem,3.4vw,2.7rem);
+    color:var(--amber);letter-spacing:-.02em;line-height:1;
+  }
+  .hero-stat .lbl{
+    font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:#93A6AB;margin-top:12px;line-height:1.4;
+  }
+
+  /* ---------- clients strip ---------- */
+  .clients{background:var(--ink-2);border-top:1px solid var(--line-dark);padding:26px 0}
+  .clients-inner{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .clients .cap{
+    font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--steel-2);white-space:nowrap;
+  }
+  .clients .names{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center}
+  .clients .names span{
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:.92rem;letter-spacing:.02em;
+    color:#B9C8CB;text-transform:uppercase;
+  }
+
+  /* ---------- profile ---------- */
+  .profile-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start;margin-top:8px}
+  .profile-copy p{margin-top:20px;font-size:1.06rem;color:#33474F}
+  .profile-copy p:first-child{margin-top:0}
+  .profile-copy b{color:var(--slate);font-weight:600}
+  .feedback{
+    background:var(--ink);color:var(--paper);border-radius:var(--r);
+    padding:38px 34px;position:sticky;top:96px;
+  }
+  .feedback .fb-cap{
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amber);
+  }
+  .feedback ul{list-style:none;margin-top:8px}
+  .feedback li{
+    font-family:"Archivo",sans-serif;font-weight:700;
+    font-size:clamp(1.3rem,2.4vw,1.7rem);letter-spacing:-.01em;
+    padding:22px 0;border-bottom:1px solid var(--line-dark);
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .feedback li:last-child{border-bottom:0;padding-bottom:0}
+  .feedback li .q{color:var(--amber);font-size:1.2rem}
+  .feedback .src{
+    margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;
+    letter-spacing:.06em;color:#8FA2A7;line-height:1.6;
+  }
+
+  /* ---------- achievements ---------- */
+  .ach-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
+  .ach-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line-light);border:1px solid var(--line-light);border-radius:var(--r);
+    margin-top:52px;overflow:hidden;
+  }
+  .ach{
+    background:var(--paper-2);padding:34px 30px 36px;position:relative;
+    transition:background .25s;
+  }
+  .ach:hover{background:#FBFCFC}
+  .ach .idx{
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.1em;
+    color:var(--amber-deep);
+  }
+  .ach .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--steel);margin-top:20px;
+  }
+  .ach h3{
+    font-size:1.42rem;font-weight:700;margin-top:12px;letter-spacing:-.015em;line-height:1.08;
+  }
+  .ach p{margin-top:14px;font-size:.96rem;color:#3B4F57;line-height:1.55}
+  .ach .stat{
+    margin-top:20px;font-family:"Archivo",sans-serif;font-weight:800;font-size:1.5rem;color:var(--amber-deep);
+  }
+  .ach .stat small{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);display:block;margin-top:4px}
+  .also{
+    margin-top:34px;padding:26px 30px;border:1px dashed var(--line-light);border-radius:var(--r);
+    display:flex;gap:24px;flex-wrap:wrap;align-items:center;
+  }
+  .also .lbl{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+  .also .items{display:flex;flex-wrap:wrap;gap:10px 22px}
+  .also .items span{font-size:.92rem;color:#3B4F57}
+  .also .items span b{color:var(--slate);font-weight:600}
+
+  /* ---------- skills ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+  .skill-col{border-top:2px solid var(--amber);padding-top:22px}
+  .skill-col h3{
+    font-size:1.02rem;font-family:"IBM Plex Mono",monospace;font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--paper);
+  }
+  .skill-col ul{list-style:none;margin-top:16px}
+  .skill-col li{
+    padding:13px 0;border-bottom:1px solid var(--line-dark);
+    font-size:.98rem;color:#C6D3D6;display:flex;gap:12px;align-items:flex-start;
+  }
+  .skill-col li::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;margin-top:8px;flex:none}
+  .skill-col li:last-child{border-bottom:0}
+
+  /* ---------- experience (conductor spine) ---------- */
+  .xp{margin-top:56px;position:relative;padding-left:0}
+  .xp-line{position:relative}
+  .xp-row{
+    display:grid;grid-template-columns:150px 1fr;gap:0;
+    position:relative;padding:0 0 8px;
+  }
+  .xp-rail{
+    position:relative;padding-right:34px;
+  }
+  .xp-rail .years{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.86rem;letter-spacing:.04em;
+    color:var(--slate);padding-top:34px;
+  }
+  .xp-body{
+    position:relative;border-left:2px solid var(--line-light);
+    padding:34px 0 40px 40px;
+  }
+  .xp-body::before{
+    content:"";position:absolute;left:-8px;top:38px;
+    width:14px;height:14px;border-radius:50%;background:var(--paper);
+    border:3px solid var(--amber);
+  }
+  .xp-row:first-child .xp-body::before{
+    box-shadow:0 0 0 5px rgba(238,162,58,.16);
+  }
+  .xp-row:last-child .xp-body{padding-bottom:6px}
+  .xp-body .role{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.42rem;letter-spacing:-.015em;color:var(--slate)}
+  .xp-body .org{
+    font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--amber-deep);margin-top:8px;
+  }
+  .xp-body .org .sub{color:var(--steel)}
+  .xp-body p{margin-top:16px;font-size:1rem;color:#3B4F57;max-width:70ch}
+
+  /* ---------- accreditations ---------- */
+  .acc-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r);
+    margin-top:52px;overflow:hidden;
+  }
+  .acc{
+    background:var(--ink);padding:26px 24px;display:flex;gap:16px;align-items:flex-start;
+    transition:background .25s;
+  }
+  .acc:hover{background:var(--ink-2)}
+  .acc .tick{
+    width:26px;height:26px;border-radius:50%;flex:none;
+    border:1.5px solid var(--amber);display:grid;place-items:center;margin-top:2px;
+  }
+  .acc .tick svg{width:13px;height:13px}
+  .acc .txt .code{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .acc .txt .name{font-size:.98rem;font-weight:500;color:var(--paper);line-height:1.35}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .contact::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 90% at 88% 110%,rgba(238,162,58,.14),transparent 60%);
+    pointer-events:none;
+  }
+  .contact-inner{position:relative;z-index:2}
+  .contact h2{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;margin-top:22px}
+  .contact h2 .amber{color:var(--amber)}
+  .contact .lead{color:#B7C6C9;max-width:52ch}
+  .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  .cc{
+    border:1px solid var(--line-dark);border-radius:var(--r);padding:26px 24px;
+    transition:border-color .2s,transform .15s,background .2s;display:block;
+  }
+  .cc:hover{border-color:var(--amber);transform:translateY(-2px);background:var(--ink-2)}
+  .cc .k{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-2)}
+  .cc .v{font-family:"Archivo",sans-serif;font-weight:700;font-size:1.24rem;margin-top:14px;color:var(--paper);letter-spacing:-.01em;word-break:break-word}
+  .cc .v .arrow{color:var(--amber)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:#809399;border-top:1px solid var(--line-dark);padding:34px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot-inner .fname{font-family:"Archivo",sans-serif;font-weight:800;color:var(--paper);text-transform:uppercase;letter-spacing:.04em;font-size:.9rem}
+  .foot-inner .meta{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.1em;color:var(--steel-2);text-transform:uppercase}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .nav-links,.nav-cta{display:none}
+    .burger{display:block}
+    .nav-links.mobile{
+      display:flex;position:fixed;top:66px;left:0;right:0;
+      flex-direction:column;gap:0;background:var(--ink);
+      border-bottom:1px solid var(--line-dark);padding:8px 28px 24px;
+    }
+    .nav-links.mobile a{padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:.82rem}
+    .nav-links.mobile a::after{display:none}
+    .profile-grid{grid-template-columns:1fr;gap:44px}
+    .feedback{position:static}
+    .ach-grid{grid-template-columns:1fr 1fr}
+    .skills-grid{grid-template-columns:1fr}
+    .acc-grid{grid-template-columns:1fr 1fr}
+    .contact-cards{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr 1fr}
+    .hero-stat:nth-child(2){border-right:0}
+    .hero-stat:nth-child(1),.hero-stat:nth-child(2){border-bottom:1px solid var(--line-dark)}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px}
+    .nav-inner{padding:0 20px}
+    section{padding:74px 0}
+    .hero{padding:120px 0 0}
+    .ach-grid,.acc-grid{grid-template-columns:1fr}
+    .xp-row{grid-template-columns:74px 1fr}
+    .xp-rail{padding-right:14px}
+    .xp-body{padding-left:26px}
+    .also{flex-direction:column;align-items:flex-start;gap:14px}
+  }
+
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+  @media print{
+    header.nav,.hero-actions,.burger,.conductor{display:none}
+    body{background:#fff;color:#000}
+    .band-ink,.hero,.feedback,.contact,.acc,footer{background:#fff!important;color:#000!important}
+    section{padding:24px 0;page-break-inside:avoid}
+    .hero{padding:20px 0 0}
+    .hero h1{color:#000}
+    .skill-col li,.feedback li,.acc .txt .name{color:#000!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Liam Cornish, home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="6" stroke="#294450" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="4" fill="#EEA23A"/>
+        <path d="M20 4v10M20 26v10M4 20h10M26 20h10" stroke="#EEA23A" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M8.5 8.5l5.5 5.5M31.5 8.5L26 14M8.5 31.5l5.5-5.5M31.5 31.5L26 26" stroke="#5E727B" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="name">Liam Cornish<span>ELEC · RENEWABLES</span></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="#profile">Profile</a>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#accreditations">Accreditations</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span> Electrical Engineer &amp; Renewables Specialist</p>
+    <h1>Liam<br>Cornish</h1>
+    <p class="role">// Off-grid power · Solar PV · Surveillance systems</p>
+    <p class="hero-pitch">Twenty-five years designing, building and commissioning <b>renewable and off-grid power systems</b> in the world's most remote, challenging and hazardous environments. From oil fields in Kazakhstan to unmanned railway stations, I keep critical infrastructure running where the grid does not reach.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get in touch →</a>
+      <a class="btn btn-ghost" href="Liam_Cornish_CV.pdf" download>Download CV (PDF)</a>
+    </div>
+
+    <div class="conductor" aria-hidden="true">
+      <span class="live"></span>
+      <span class="tap" style="left:16%"></span>
+      <span class="tap" style="left:44%"></span>
+      <span class="tap" style="left:72%"></span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">25+</div><div class="lbl">Years in the trade</div></div>
+      <div class="hero-stat"><div class="num">300+</div><div class="lbl">ARC power units deployed</div></div>
+      <div class="hero-stat"><div class="num">90+</div><div class="lbl">Off-grid platforms delivered</div></div>
+      <div class="hero-stat"><div class="num">120kW</div><div class="lbl">Peak integrated renewables project</div></div>
+    </div>
+  </div>
+
+  <div class="clients">
+    <div class="wrap clients-inner">
+      <span class="cap">Delivered for</span>
+      <div class="names">
+        <span>Chevron</span><span>Tengizchevroil</span><span>Network Rail</span><span>Telent</span>
+        <span>Highways England</span><span>Balfour Beatty</span><span>Deutsche Bank</span><span>ING</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROFILE ================= -->
+<section id="profile">
+  <div class="wrap">
+    <p class="eyebrow"><span class="node"></span><span class="rule"></span><span class="ref">01</span> — Profile</p>
+    <div class="profile-grid">
+      <div>
+        <h2 class="section-title">Good people, big problems, the best possible solution.</h2>
+      </div>
+      <div class="profile-copy">
+        <p>For more than 25 years I have worked as an electrician and electrical engineer. For the last 15 of them I have specialised in the design and development of surveillance, communications and power systems, with a deep focus on renewable technology and genuinely sustainable solutions.</p>
+        <p>I have designed celebrated solar, wind and biomass innovations, delivered award-winning security and fire projects, and been part of successful initiatives around the world. What drives me is simple: <b>a passion for working with good people to solve big problems in the best possible way</b>, within the timeline and budget we have been given.</p>
+        <p>Whether the stakeholder is a customer, colleague, manager, supplier or regulator, I lead from the front. My job is to make sure everyone around me has a safe, productive and collaborative environment, where knowledge is shared, debate is encouraged, and mistakes become lessons in the name of continuous improvement.</p>
+        <p>I am now looking for a senior or managerial engineering role with an eco-conscious organisation that needs an innovative, people-focused collaborator designing and delivering effective, elegant engineering solutions.</p>
+      </div>
+    </div>
+
+    <div class="feedback" style="margin-top:56px;position:static;display:grid;grid-template-columns:1fr 1fr;gap:34px 60px;align-items:center">
+      <div>
+        <p class="fb-cap">// What clients and peers say</p>
+        <p class="src" style="margin-top:14px;color:#AFC0C4;font-family:'IBM Plex Sans';letter-spacing:0;font-size:1rem;line-height:1.6">Feedback gathered from respected engineering professionals and major brands across recent projects.</p>
+      </div>
+      <ul>
+        <li><span class="q">&ldquo;</span>Unflappable</li>
+        <li><span class="q">&ldquo;</span>Talented critical thinker</li>
+        <li><span class="q">&ldquo;</span>100% consistent</li>
+        <li><span class="q">&ldquo;</span>Designs that speak for themselves</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS / ACHIEVEMENTS ================= -->
+<section id="work" class="band-ink" style="background:var(--paper);color:var(--slate)">
+  <div class="wrap">
+    <div class="ach-head">
+      <div>
+        <p class="eyebrow"><span class="node"></span><span class="rule"></span><span class="ref">02</span> — Selected projects</p>
+        <h2 class="section-title wide" style="color:var(--slate)">Systems built to run in the hardest places.</h2>
+      </div>
+    </div>
+
+    <div class="ach-grid">
+      <article class="ach">
+        <div class="idx">P/01</div>
+        <div class="meta">Network Rail · Telent</div>
+        <h3>Altnabreac Solar Power Station</h3>
+        <p>Designed, built and commissioned an off-grid solar power station supplying a remote, unmanned railway station on Scotland's Far North Line, keeping trackside systems powered with no mains connection.</p>
+        <div class="stat">Off-grid<small>Zero mains dependency</small></div>
+      </article>
+
+      <article class="ach">
+        <div class="idx">P/02</div>
+        <div class="meta">Chevron · Tengizchevroil · Kazakhstan</div>
+        <h3>90+ off-grid platforms, SICS &amp; RAFT systems</h3>
+        <p>Lead design, construction and commissioning engineer across more than 90 off-grid platforms. Developed and delivered operations and maintenance training to engineers on site in Tengiz, Kazakhstan.</p>
+        <div class="stat">90+<small>Platforms delivered</small></div>
+      </article>
+
+      <article class="ach">
+        <div class="idx">P/03</div>
+        <div class="meta">Product design · Solar PV + Methanol</div>
+        <h3>ARC autonomous power range</h3>
+        <p>Design and development of the ARC product range using solar PV and methanol, with more than 300 units deployed. Recently extended to integrate an HVO engine for cleaner autonomous power.</p>
+        <div class="stat">300+<small>Units deployed</small></div>
+      </article>
+
+      <article class="ach">
+        <div class="idx">P/04</div>
+        <div class="meta">ING · Deutsche Bank · Candover</div>
+        <h3>Data centre inspection &amp; commissioning</h3>
+        <p>Test, inspection and commissioning across multiple Digital Realty data centres. Project managed and led a team of electricians and test engineers delivering periodic inspection and planned preventative maintenance.</p>
+        <div class="stat">PPM<small>Periodic inspection lead</small></div>
+      </article>
+
+      <article class="ach">
+        <div class="idx">P/05</div>
+        <div class="meta">M&amp;E coordination · Responsible engineer</div>
+        <h3>120kW integrated renewables solution</h3>
+        <p>M&amp;E coordination and project management for a 120kW solution combining solar PV, biomass, borehole and water treatment. Responsible engineer for electrical installation and commissioning across refurbishment and new-build phases.</p>
+        <div class="stat">120kW<small>PV · biomass · borehole</small></div>
+      </article>
+
+      <article class="ach">
+        <div class="idx">P/06</div>
+        <div class="meta">London Beach Country Hotel &amp; Spa</div>
+        <h3>80kW solar farm with wind turbine</h3>
+        <p>Design and installation of an 80kW solar farm with an additional wind turbine, cutting running costs and carbon while delivering resilient on-site generation.</p>
+        <div class="stat">80kW<small>Solar + wind</small></div>
+      </article>
+    </div>
+
+    <div class="also">
+      <span class="lbl">// Also delivered</span>
+      <div class="items">
+        <span><b>Canterbury College</b> campus solar, up to 50% of college power</span>
+        <span><b>Channel Tunnel</b> solar signage systems</span>
+        <span><b>60 solar surveillance units</b> commissioned on international oil fields</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="band-ink">
+  <div class="wrap">
+    <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span><span class="ref">03</span> — Capabilities</p>
+    <h2 class="section-title">From first requirement to final commissioning.</h2>
+
+    <div class="skills-grid">
+      <div class="skill-col">
+        <h3>Design &amp; delivery</h3>
+        <ul>
+          <li>Requirements gathering, analysis and validation</li>
+          <li>Outline design and detailed design</li>
+          <li>Prototyping and testing</li>
+          <li>Stakeholder management</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h3>Renewable systems</h3>
+        <ul>
+          <li>Photovoltaic design, integration, installation, testing and maintenance</li>
+          <li>Off-grid battery and hybrid system design and implementation</li>
+          <li>Biomass, biofuel, boiler flues, heat pumps and fuel cells</li>
+          <li>Micro-turbine systems integration</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h3>Engineering &amp; site</h3>
+        <ul>
+          <li>Site and site-safety management</li>
+          <li>Inter-disciplinary team management</li>
+          <li>Structural engineering, component manufacturers and fabricators</li>
+          <li>Safety and product-marking compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow"><span class="node"></span><span class="rule"></span><span class="ref">04</span> — Experience</p>
+    <h2 class="section-title wide">Twenty-five years on the line.</h2>
+
+    <div class="xp">
+      <div class="xp-line">
+
+        <div class="xp-row">
+          <div class="xp-rail"><div class="years">2017 — Present</div></div>
+          <div class="xp-body">
+            <div class="role">Head of Technical Operations &amp; Renewables Specialist</div>
+            <div class="org">WJ Sunstone <span class="sub">/ Solar, Wind &amp; Biomass</span></div>
+            <p>Managed the manufacturing department, overseeing the warehouse assembly area and mechanical fitters, with final responsibility for design, build and operation. Researched and developed new products and ran the organisation's technical processes end to end. Delivered live onsite training and commissioning support to major international clients including Highways England, Chevron Oil and Balfour Beatty, and travelled to international oil fields to commission and deploy 60 solar surveillance units.</p>
+          </div>
+        </div>
+
+        <div class="xp-row">
+          <div class="xp-rail"><div class="years">2010 — 2017</div></div>
+          <div class="xp-body">
+            <div class="role">Company Director</div>
+            <div class="org">LEC Electrical Contractors <span class="sub">/ LEC Renewables</span></div>
+            <p>Grew the team through a period of success and moved the business into the renewables sector with the LEC Renewables subsidiary. Delivered solar installations including signage systems at the Channel Tunnel and an 80kW solar farm. Drove diversification from solar into mechanical, heat pumps, small-scale wind and biomass, working with Herz and Windhager, and commissioned renewable systems up to 120kW.</p>
+          </div>
+        </div>
+
+        <div class="xp-row">
+          <div class="xp-rail"><div class="years">2003 — 2010</div></div>
+          <div class="xp-body">
+            <div class="role">Self-Employed Electrician</div>
+            <div class="org">LEC Electrical Contractors</div>
+            <p>Started as a self-employed electrician and then formed a company serving domestic and commercial clients, building the reputation and relationships that later carried the business into renewables.</p>
+          </div>
+        </div>
+
+        <div class="xp-row">
+          <div class="xp-rail"><div class="years">1999 — 2003</div></div>
+          <div class="xp-body">
+            <div class="role">General Assistant</div>
+            <div class="org">Builders Merchants <span class="sub">/ Kent, UK</span></div>
+            <p>Various roles across sales, machining and logistics, developing hands-on trade knowledge and an early feel for how sites and supply chains fit together.</p>
+          </div>
+        </div>
+
+        <div class="xp-row">
+          <div class="xp-rail"><div class="years">1996 — 1999</div></div>
+          <div class="xp-body">
+            <div class="role">Logistics Co-ordinator</div>
+            <div class="org">BOC <span class="sub">/ Kent, UK</span></div>
+            <p>Co-ordinated export facilities for road freight across Europe and international container shipping to Canada and the Far East.</p>
+          </div>
+        </div>
+
+        <div class="xp-row">
+          <div class="xp-rail"><div class="years">1995 — 1996</div></div>
+          <div class="xp-body">
+            <div class="role">Quality Control &amp; Warehouse Manager</div>
+            <div class="org">Fruit Processing <span class="sub">/ Kent, UK</span></div>
+            <p>Ran QA and warehouse management for a large fruit processor, and qualified as a TWI (trained work instructor).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACCREDITATIONS ================= -->
+<section id="accreditations" class="band-ink">
+  <div class="wrap">
+    <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span><span class="ref">05</span> — Accreditations</p>
+    <h2 class="section-title">Qualified, certified, current.</h2>
+
+    <div class="acc-grid">
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Inspection &amp; Testing</div><div class="name">City &amp; Guilds 2391-52</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">British Wiring Standards</div><div class="name">18th Edition BS 7671</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">EICR</div><div class="name">BS 7671 Condition Inspection &amp; Reporting</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Health &amp; Safety</div><div class="name">NEBOSH H&amp;S Management for Construction</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Solar PV</div><div class="name">NICEIC Solar Photovoltaic Design &amp; Installation</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Site Management</div><div class="name">ECS Site Manager status</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Professional Membership</div><div class="name">MIET — Member of the IET</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">High Voltage</div><div class="name">City &amp; Guilds HV Awareness</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Site Safety</div><div class="name">CITB SMSTS — Site Managers' Safety</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Rail</div><div class="name">Personal Track Safety (Network Rail)</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Rail</div><div class="name">Basic Track Awareness (TfL)</div></div></div>
+      <div class="acc"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#EEA23A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div class="txt"><div class="code">Heat Pumps</div><div class="name">Mitsubishi Heat Pump Design &amp; Installation</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="wrap contact-inner">
+    <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span><span class="ref">06</span> — Contact</p>
+    <h2>Let's build<br>something <span class="amber">that lasts.</span></h2>
+    <p class="lead">Open to senior and managerial engineering roles with eco-conscious organisations. If you have a big problem worth solving well, get in touch.</p>
+
+    <div class="contact-cards">
+      <a class="cc" href="tel:+447845619290">
+        <div class="k">// Phone</div>
+        <div class="v">07845 619290 <span class="arrow">→</span></div>
+      </a>
+      <a class="cc" href="mailto:liamcornish79@gmail.com">
+        <div class="k">// Email</div>
+        <div class="v">liamcornish79@gmail.com <span class="arrow">→</span></div>
+      </a>
+      <a class="cc" href="Liam_Cornish_CV.pdf" download>
+        <div class="k">// Full CV</div>
+        <div class="v">Download PDF <span class="arrow">↓</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="fname">Liam Cornish</span>
+    <span class="meta">Electrical Engineer &amp; Renewables Specialist · Kent, UK · © 2026</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('mobile');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('mobile');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // Active section highlight
+  var navMap = {};
+  document.querySelectorAll('#navlinks a').forEach(function(a){
+    navMap[a.getAttribute('href').slice(1)] = a;
+  });
+  var sections = Object.keys(navMap).map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          Object.values(navMap).forEach(function(a){ a.classList.remove('active'); });
+          if (navMap[e.target.id]) navMap[e.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+</script>
+</body>
+</html>
