@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liam Cornish · Electrical Engineer & Renewables Specialist</title>
-<meta name="description" content="Liam Cornish — electrical engineer and renewables specialist. 25+ years designing, building and commissioning off-grid power, solar and surveillance systems in remote and hazardous environments.">
+<title>Liam Cornish · Head of Technical Operations & Lead Product Designer</title>
+<meta name="description" content="Liam Cornish — Head of Technical Operations and Lead Product Designer. 25+ years engineering renewable, off-grid and autonomous power systems for the world's harshest environments. Designer of the Sunstone SICS, RAFT and ARC platforms.">
 <meta name="theme-color" content="#0C1A22">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Liam Cornish · Electrical Engineer & Renewables Specialist">
-<meta property="og:description" content="25+ years designing, building and commissioning off-grid power, solar and surveillance systems in the world's most demanding environments.">
+<meta property="og:title" content="Liam Cornish · Head of Technical Operations & Lead Product Designer">
+<meta property="og:description" content="Specialist product designer and qualified electrical engineer. 25+ years of renewable, off-grid and autonomous power in the world's most demanding environments.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -264,6 +264,13 @@
     margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;
     letter-spacing:.06em;color:#8FA2A7;line-height:1.6;
   }
+  .feedback.grid2{
+    margin-top:56px;position:static;display:grid;
+    grid-template-columns:1fr 1fr;gap:34px 60px;align-items:center;
+  }
+  .feedback.grid2 .pf-note{
+    margin-top:14px;color:#AFC0C4;font-size:1rem;line-height:1.6;
+  }
 
   /* ---------- achievements ---------- */
   .ach-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
@@ -301,6 +308,30 @@
   .also .items{display:flex;flex-wrap:wrap;gap:10px 22px}
   .also .items span{font-size:.92rem;color:#3B4F57}
   .also .items span b{color:var(--slate);font-weight:600}
+
+  /* ---------- flagship case studies ---------- */
+  .cases{
+    margin-top:52px;display:flex;flex-direction:column;gap:1px;
+    background:var(--line-light);border:1px solid var(--line-light);border-radius:var(--r);overflow:hidden;
+  }
+  .case{background:var(--paper-2);padding:42px 40px;transition:background .25s}
+  .case:hover{background:#FBFCFC}
+  .case-top{display:flex;gap:22px;align-items:baseline}
+  .case .idx{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:var(--amber-deep);flex:none;padding-top:6px}
+  .case .meta{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--steel)}
+  .case h3{font-size:clamp(1.4rem,2.6vw,1.75rem);font-weight:800;letter-spacing:-.02em;margin-top:10px;color:var(--slate);line-height:1.05}
+  .case-body{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;margin-top:22px;align-items:start}
+  .case-body p{font-size:1rem;color:#3B4F57;line-height:1.62}
+  .case-metrics{display:flex;flex-direction:column;border-left:2px solid var(--amber)}
+  .case-metrics .m{padding:0 0 20px 22px}
+  .case-metrics .m:last-child{padding-bottom:0}
+  .m .m-num{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.55rem;color:var(--amber-deep);letter-spacing:-.02em;line-height:1}
+  .m .m-lbl{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--steel);margin-top:7px;line-height:1.4}
+  .spec-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .spec-strip span{
+    font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.03em;color:var(--slate);
+    background:#EDF1F0;border:1px solid var(--line-light);border-radius:3px;padding:7px 11px;
+  }
 
   /* ---------- skills ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
@@ -411,7 +442,12 @@
     .nav-links.mobile a::after{display:none}
     .profile-grid{grid-template-columns:1fr;gap:44px}
     .feedback{position:static}
+    .feedback.grid2{grid-template-columns:1fr;gap:24px;padding:32px 26px}
     .ach-grid{grid-template-columns:1fr 1fr}
+    .case{padding:34px 28px}
+    .case-body{grid-template-columns:1fr;gap:28px}
+    .case-metrics{flex-direction:row;flex-wrap:wrap;gap:22px 40px;border-left:0;border-top:2px solid var(--amber);padding-top:22px}
+    .case-metrics .m{padding:0}
     .skills-grid{grid-template-columns:1fr}
     .acc-grid{grid-template-columns:1fr 1fr}
     .contact-cards{grid-template-columns:1fr}
@@ -422,13 +458,28 @@
   @media (max-width:560px){
     .wrap{padding:0 20px}
     .nav-inner{padding:0 20px}
-    section{padding:74px 0}
-    .hero{padding:120px 0 0}
+    section{padding:64px 0}
+    .hero{padding:112px 0 0}
+    .hero h1{font-size:clamp(3rem,17vw,4.4rem)}
+    .hero-pitch{margin-top:24px}
+    .hero-actions{flex-direction:column;gap:12px;margin-top:30px}
+    .hero-actions .btn{width:100%;justify-content:center;padding:16px 20px}
+    .hero-stat{padding:24px 20px 30px}
+    .conductor{margin-top:48px}
     .ach-grid,.acc-grid{grid-template-columns:1fr}
     .xp-row{grid-template-columns:74px 1fr}
     .xp-rail{padding-right:14px}
-    .xp-body{padding-left:26px}
+    .xp-body{padding:28px 0 34px 26px}
     .also{flex-direction:column;align-items:flex-start;gap:14px}
+    .case{padding:26px 20px}
+    .case-top{gap:14px}
+    .case h3{font-size:1.32rem}
+    .case-metrics{gap:20px 26px}
+    .feedback.grid2{padding:28px 22px;margin-top:44px}
+    .feedback li{font-size:1.16rem;padding:16px 0}
+    .section-title{font-size:clamp(1.75rem,7vw,2.2rem)}
+    .contact h2{font-size:clamp(2.1rem,11vw,3rem)}
+    .cc .v{font-size:1.08rem}
   }
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
@@ -455,7 +506,7 @@
         <path d="M20 4v10M20 26v10M4 20h10M26 20h10" stroke="#EEA23A" stroke-width="1.5" stroke-linecap="round"/>
         <path d="M8.5 8.5l5.5 5.5M31.5 8.5L26 14M8.5 31.5l5.5-5.5M31.5 31.5L26 26" stroke="#5E727B" stroke-width="1.3" stroke-linecap="round"/>
       </svg>
-      <span class="name">Liam Cornish<span>ELEC · RENEWABLES</span></span>
+      <span class="name">Liam Cornish<span>AUTONOMOUS POWER</span></span>
     </a>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
       <a href="#profile">Profile</a>
@@ -472,13 +523,13 @@
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
   <div class="wrap hero-inner">
-    <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span> Electrical Engineer &amp; Renewables Specialist</p>
+    <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span> Head of Technical Operations &amp; Lead Product Designer</p>
     <h1>Liam<br>Cornish</h1>
-    <p class="role">// Off-grid power · Solar PV · Surveillance systems</p>
-    <p class="hero-pitch">Twenty-five years designing, building and commissioning <b>renewable and off-grid power systems</b> in the world's most remote, challenging and hazardous environments. From oil fields in Kazakhstan to unmanned railway stations, I keep critical infrastructure running where the grid does not reach.</p>
+    <p class="role">// Remote autonomous power · Solar PV · Off-grid hybrid systems</p>
+    <p class="hero-pitch">A specialist product designer with more than 25 years as a qualified electrical engineer, designing, building and commissioning renewable and off-grid power in the world's harshest, highest-hazard environments. For the past decade I have led the development of the internationally renowned Sunstone range, setting the standard for <b>remote autonomous power platforms</b>.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#contact">Get in touch →</a>
-      <a class="btn btn-ghost" href="Liam_Cornish_CV.pdf" download>Download CV (PDF)</a>
+      <a class="btn btn-ghost" href="Liam_Cornish_CV.pdf" download="Liam_Cornish_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </div>
 
     <div class="conductor" aria-hidden="true">
@@ -491,10 +542,10 @@
 
   <div class="wrap">
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">25+</div><div class="lbl">Years in the trade</div></div>
-      <div class="hero-stat"><div class="num">300+</div><div class="lbl">ARC power units deployed</div></div>
-      <div class="hero-stat"><div class="num">90+</div><div class="lbl">Off-grid platforms delivered</div></div>
-      <div class="hero-stat"><div class="num">120kW</div><div class="lbl">Peak integrated renewables project</div></div>
+      <div class="hero-stat"><div class="num">25+</div><div class="lbl">Years qualified</div></div>
+      <div class="hero-stat"><div class="num">£3.5M+</div><div class="lbl">Contracts delivered</div></div>
+      <div class="hero-stat"><div class="num">400+</div><div class="lbl">ARC units deployed</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">Uptime achieved off-grid</div></div>
     </div>
   </div>
 
@@ -502,8 +553,8 @@
     <div class="wrap clients-inner">
       <span class="cap">Delivered for</span>
       <div class="names">
-        <span>Chevron</span><span>Tengizchevroil</span><span>Network Rail</span><span>Telent</span>
-        <span>Highways England</span><span>Balfour Beatty</span><span>Deutsche Bank</span><span>ING</span>
+        <span>Chevron</span><span>Tengizchevroil</span><span>Fluor</span><span>Network Rail</span>
+        <span>Telent</span><span>ScotRail</span><span>Highways England</span><span>Balfour Beatty</span>
       </div>
     </div>
   </div>
@@ -515,20 +566,19 @@
     <p class="eyebrow"><span class="node"></span><span class="rule"></span><span class="ref">01</span> — Profile</p>
     <div class="profile-grid">
       <div>
-        <h2 class="section-title">Good people, big problems, the best possible solution.</h2>
+        <h2 class="section-title">Setting the standard for remote autonomous power.</h2>
       </div>
       <div class="profile-copy">
-        <p>For more than 25 years I have worked as an electrician and electrical engineer. For the last 15 of them I have specialised in the design and development of surveillance, communications and power systems, with a deep focus on renewable technology and genuinely sustainable solutions.</p>
-        <p>I have designed celebrated solar, wind and biomass innovations, delivered award-winning security and fire projects, and been part of successful initiatives around the world. What drives me is simple: <b>a passion for working with good people to solve big problems in the best possible way</b>, within the timeline and budget we have been given.</p>
-        <p>Whether the stakeholder is a customer, colleague, manager, supplier or regulator, I lead from the front. My job is to make sure everyone around me has a safe, productive and collaborative environment, where knowledge is shared, debate is encouraged, and mistakes become lessons in the name of continuous improvement.</p>
-        <p>I am now looking for a senior or managerial engineering role with an eco-conscious organisation that needs an innovative, people-focused collaborator designing and delivering effective, elegant engineering solutions.</p>
+        <p>I work as a specialist product designer, drawing on more than 25 years as a fully qualified electrical engineer. I have designed, developed and delivered high-value projects around the world, with a heavy focus on renewable technologies in off-grid and high-hazard environments. For the past ten years I have been personally responsible for the design, construction and commissioning of the now internationally renowned Sunstone equipment range, leading and nurturing the development team while <b>setting the standard for remote autonomous power platforms</b>.</p>
+        <p>Safety and efficiency underpin all of my design work, with a particular focus on operation and maintenance requirements and on optimising multiple technologies into truly hybrid systems. I constantly strive to achieve 100% uptime and reduce costs for clients, while making sure my equipment meets the highest safety standards.</p>
+        <p>I am now looking for a senior or managerial engineering role with an organisation that values an innovative, collaborative professional who leads from the front and constantly strives for the highest standards.</p>
       </div>
     </div>
 
-    <div class="feedback" style="margin-top:56px;position:static;display:grid;grid-template-columns:1fr 1fr;gap:34px 60px;align-items:center">
+    <div class="feedback grid2">
       <div>
         <p class="fb-cap">// What clients and peers say</p>
-        <p class="src" style="margin-top:14px;color:#AFC0C4;font-family:'IBM Plex Sans';letter-spacing:0;font-size:1rem;line-height:1.6">Feedback gathered from respected engineering professionals and major brands across recent projects.</p>
+        <p class="pf-note">Feedback gathered from respected engineering professionals and major brands across recent projects.</p>
       </div>
       <ul>
         <li><span class="q">&ldquo;</span>Unflappable</li>
@@ -550,62 +600,95 @@
       </div>
     </div>
 
-    <div class="ach-grid">
-      <article class="ach">
-        <div class="idx">P/01</div>
-        <div class="meta">Network Rail · Telent</div>
-        <h3>Altnabreac Solar Power Station</h3>
-        <p>Designed, built and commissioned an off-grid solar power station supplying a remote, unmanned railway station on Scotland's Far North Line, keeping trackside systems powered with no mains connection.</p>
-        <div class="stat">Off-grid<small>Zero mains dependency</small></div>
+    <div class="cases">
+
+      <article class="case">
+        <div class="case-top">
+          <span class="idx">P/01</span>
+          <div>
+            <div class="meta">Tengizchevroil (TCO) · Chevron · with Fluor</div>
+            <h3>Sunstone SICS — Solar Off-Grid Security Systems</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>I designed and delivered 58 solar off-grid security systems on time and on budget, taking the SICS range from original concept through to completion for one of the world's harshest environments. The project culminated in on-site commissioning and operations and maintenance training for Kazakh and Russian engineers in the Tengiz oil field, Kazakhstan. The equipment has since far exceeded its original design life, letting TCO recognise ongoing savings against the cost of hardwired infrastructure.</p>
+          <div class="case-metrics">
+            <div class="m"><div class="m-num">58</div><div class="m-lbl">Systems delivered</div></div>
+            <div class="m"><div class="m-num">£2.5M+</div><div class="m-lbl">Contract value</div></div>
+            <div class="m"><div class="m-num">On time</div><div class="m-lbl">On budget</div></div>
+          </div>
+        </div>
       </article>
 
-      <article class="ach">
-        <div class="idx">P/02</div>
-        <div class="meta">Chevron · Tengizchevroil · Kazakhstan</div>
-        <h3>90+ off-grid platforms, SICS &amp; RAFT systems</h3>
-        <p>Lead design, construction and commissioning engineer across more than 90 off-grid platforms. Developed and delivered operations and maintenance training to engineers on site in Tengiz, Kazakhstan.</p>
-        <div class="stat">90+<small>Platforms delivered</small></div>
+      <article class="case">
+        <div class="case-top">
+          <span class="idx">P/02</span>
+          <div>
+            <div class="meta">Telent · Network Rail · ScotRail</div>
+            <h3>Altnabreac Off-Grid Power Station</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <div>
+            <p>As lead engineer alongside Telent's technical team, I designed and built a fully bespoke off-grid power station to run Telent's Request to Stop kiosk in one of the remotest parts of Scotland, saving Network Rail more than £500,000 against a conventional supply. The truly hybrid system was taken through Network Rail's stringent GRIP process from outline design to commissioning and FAT, and certified by Eurofins as fully compliant for EMC and RF within the rail 3m zone. It has since run completely off-grid for more than two years, delivering 100% uptime for the connected equipment.</p>
+            <div class="spec-strip">
+              <span>9kW PV Array</span><span>12kW Bladon Microturbine</span><span>48kWh Battery</span><span>Victron Control</span><span>Relocatable Building</span>
+            </div>
+          </div>
+          <div class="case-metrics">
+            <div class="m"><div class="m-num">£500k+</div><div class="m-lbl">Saved vs mains supply</div></div>
+            <div class="m"><div class="m-num">100%</div><div class="m-lbl">Uptime achieved</div></div>
+            <div class="m"><div class="m-num">2+ yrs</div><div class="m-lbl">Continuous off-grid</div></div>
+          </div>
+        </div>
       </article>
 
-      <article class="ach">
-        <div class="idx">P/03</div>
-        <div class="meta">Product design · Solar PV + Methanol</div>
-        <h3>ARC autonomous power range</h3>
-        <p>Design and development of the ARC product range using solar PV and methanol, with more than 300 units deployed. Recently extended to integrate an HVO engine for cleaner autonomous power.</p>
-        <div class="stat">300+<small>Units deployed</small></div>
+      <article class="case">
+        <div class="case-top">
+          <span class="idx">P/03</span>
+          <div>
+            <div class="meta">Tengizchevroil (TCO) · Chevron</div>
+            <h3>RAFT — Next-Generation Power Platforms</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>Building on the success of SICS, TCO needed upgraded systems with more power and greater battery capacity. I engineered a new generation of 33 off-grid power platforms, delivered over two years, which have again exceeded expectations in temperatures from -40°C to over 50°C, letting TCO rapidly secure its site perimeters. I continue to provide remote operations and maintenance support for the RAFT systems and legacy kit.</p>
+          <div class="case-metrics">
+            <div class="m"><div class="m-num">33</div><div class="m-lbl">Platforms engineered</div></div>
+            <div class="m"><div class="m-num">£1M+</div><div class="m-lbl">Contract value</div></div>
+            <div class="m"><div class="m-num">-40 → 50°C</div><div class="m-lbl">Proven operating range</div></div>
+          </div>
+        </div>
       </article>
 
-      <article class="ach">
-        <div class="idx">P/04</div>
-        <div class="meta">ING · Deutsche Bank · Candover</div>
-        <h3>Data centre inspection &amp; commissioning</h3>
-        <p>Test, inspection and commissioning across multiple Digital Realty data centres. Project managed and led a team of electricians and test engineers delivering periodic inspection and planned preventative maintenance.</p>
-        <div class="stat">PPM<small>Periodic inspection lead</small></div>
+      <article class="case">
+        <div class="case-top">
+          <span class="idx">P/04</span>
+          <div>
+            <div class="meta">WJ Sunstone · originally a British MOD concept</div>
+            <h3>ARC Series — Autonomous Power Platforms</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>For the past ten years I have been personally responsible for the design, construction and commissioning of the internationally renowned ARC series. What began as an MOD concept for a smaller, trailer-based SICS has become the UK market leader for off-grid solar CCTV, surveillance and communications, with more than 300 systems in use and a further 100 in commissioning. The recent integration of an HVO-optimised engine has taken reliability, efficiency and safety to a new level, cutting service visits and streamlining operations. The system is certified fully compliant through Element Material Technologies.</p>
+          <div class="case-metrics">
+            <div class="m"><div class="m-num">400+</div><div class="m-lbl">Units in use &amp; commissioning</div></div>
+            <div class="m"><div class="m-num">UK #1</div><div class="m-lbl">Market-leading platform</div></div>
+            <div class="m"><div class="m-num">HVO</div><div class="m-lbl">Optimised engine</div></div>
+          </div>
+        </div>
       </article>
 
-      <article class="ach">
-        <div class="idx">P/05</div>
-        <div class="meta">M&amp;E coordination · Responsible engineer</div>
-        <h3>120kW integrated renewables solution</h3>
-        <p>M&amp;E coordination and project management for a 120kW solution combining solar PV, biomass, borehole and water treatment. Responsible engineer for electrical installation and commissioning across refurbishment and new-build phases.</p>
-        <div class="stat">120kW<small>PV · biomass · borehole</small></div>
-      </article>
-
-      <article class="ach">
-        <div class="idx">P/06</div>
-        <div class="meta">London Beach Country Hotel &amp; Spa</div>
-        <h3>80kW solar farm with wind turbine</h3>
-        <p>Design and installation of an 80kW solar farm with an additional wind turbine, cutting running costs and carbon while delivering resilient on-site generation.</p>
-        <div class="stat">80kW<small>Solar + wind</small></div>
-      </article>
     </div>
 
     <div class="also">
       <span class="lbl">// Also delivered</span>
       <div class="items">
-        <span><b>Canterbury College</b> campus solar, up to 50% of college power</span>
-        <span><b>Channel Tunnel</b> solar signage systems</span>
-        <span><b>60 solar surveillance units</b> commissioned on international oil fields</span>
+        <span><b>120kW integrated renewables</b> — solar PV, biomass, borehole &amp; water treatment</span>
+        <span><b>London Beach Hotel &amp; Spa</b> — 80kW solar farm with wind turbine</span>
+        <span><b>Data centre commissioning</b> — ING, Deutsche Bank &amp; Candover</span>
+        <span><b>Canterbury College</b> — campus solar, up to 50% of power</span>
+        <span><b>Channel Tunnel</b> — solar signage systems</span>
       </div>
     </div>
   </div>
@@ -621,28 +704,28 @@
       <div class="skill-col">
         <h3>Design &amp; delivery</h3>
         <ul>
-          <li>Requirements gathering, analysis and validation</li>
+          <li>Requirements gathering and validation</li>
           <li>Outline design and detailed design</li>
           <li>Prototyping and testing</li>
           <li>Stakeholder management</li>
         </ul>
       </div>
       <div class="skill-col">
-        <h3>Renewable systems</h3>
+        <h3>Power &amp; hybrid systems</h3>
         <ul>
-          <li>Photovoltaic design, integration, installation, testing and maintenance</li>
+          <li>Photovoltaic system design, integration, installation, commissioning and maintenance</li>
           <li>Off-grid battery and hybrid system design and implementation</li>
-          <li>Biomass, biofuel, boiler flues, heat pumps and fuel cells</li>
-          <li>Micro-turbine systems integration</li>
+          <li>Micro-turbine, fuel cell and heat pump design and integration</li>
+          <li>Structural analysis</li>
         </ul>
       </div>
       <div class="skill-col">
-        <h3>Engineering &amp; site</h3>
+        <h3>Leadership &amp; compliance</h3>
         <ul>
-          <li>Site and site-safety management</li>
-          <li>Inter-disciplinary team management</li>
-          <li>Structural engineering, component manufacturers and fabricators</li>
-          <li>Safety and product-marking compliance</li>
+          <li>Safety management</li>
+          <li>Inter-disciplinary team co-ordination and management</li>
+          <li>Safety and product compliance</li>
+          <li>Operation and maintenance optimisation</li>
         </ul>
       </div>
     </div>
@@ -745,7 +828,7 @@
   <div class="wrap contact-inner">
     <p class="eyebrow on-dark"><span class="node"></span><span class="rule"></span><span class="ref">06</span> — Contact</p>
     <h2>Let's build<br>something <span class="amber">that lasts.</span></h2>
-    <p class="lead">Open to senior and managerial engineering roles with eco-conscious organisations. If you have a big problem worth solving well, get in touch.</p>
+    <p class="lead">Open to senior and managerial engineering roles, UK-based or international, and happy to consider hybrid working. If you have a big problem worth solving well, get in touch.</p>
 
     <div class="contact-cards">
       <a class="cc" href="tel:+447845619290">
@@ -756,7 +839,7 @@
         <div class="k">// Email</div>
         <div class="v">liamcornish79@gmail.com <span class="arrow">→</span></div>
       </a>
-      <a class="cc" href="Liam_Cornish_CV.pdf" download>
+      <a class="cc" href="Liam_Cornish_CV.pdf" download="Liam_Cornish_CV.pdf" target="_blank" rel="noopener">
         <div class="k">// Full CV</div>
         <div class="v">Download PDF <span class="arrow">↓</span></div>
       </a>
@@ -767,7 +850,7 @@
 <footer>
   <div class="wrap foot-inner">
     <span class="fname">Liam Cornish</span>
-    <span class="meta">Electrical Engineer &amp; Renewables Specialist · Kent, UK · © 2026</span>
+    <span class="meta">Head of Technical Operations &amp; Lead Product Designer · Whitstable, Kent · © 2026</span>
   </div>
 </footer>
 
